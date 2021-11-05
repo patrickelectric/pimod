@@ -9,7 +9,7 @@ chroot_setup() {
   local loop_root="/dev/mapper/${LOOP}p${IMG_ROOT}"
   mount "${loop_root}" "${CHROOT_MOUNT}/"
 
-  mount --bind /dev "${CHROOT_MOUNT}/dev"
+  mount --rbind /dev "${CHROOT_MOUNT}/dev"
   mount --rbind /sys "${CHROOT_MOUNT}/sys"
   mount --bind /proc "${CHROOT_MOUNT}/proc"
   mount --bind /dev/pts "${CHROOT_MOUNT}/dev/pts"
