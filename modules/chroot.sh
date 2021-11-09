@@ -13,6 +13,7 @@ chroot_setup() {
   mount --rbind /sys "${CHROOT_MOUNT}/sys"
   mount --bind /proc "${CHROOT_MOUNT}/proc"
   mount --bind /dev/pts "${CHROOT_MOUNT}/dev/pts"
+  mount --bind /etc/resolv.conf "${CHROOT_MOUNT}/etc/resolv.conf"
 
   qemu_setup
 
